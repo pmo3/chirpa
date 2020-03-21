@@ -5,11 +5,19 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header>
+      <nav class="flex items-center justify-between px-4 py-3 bg-indigo-800 text-white">
+        <%= link_to "Browse Chirps", chirps_path %>
+        <% if current_admin.present? %>
+          <%= link_to('Logout', destroy_admin_session_path, method: :delete) %>
+        <% end %>
+      </nav>
+    </header>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
