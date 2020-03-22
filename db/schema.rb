@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_19_195940) do
+ActiveRecord::Schema.define(version: 2020_03_21_234128) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(version: 2020_03_19_195940) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+  create_table "chirp_requests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "chirp_id", null: false
+    t.string "sender"
+    t.string "recipient"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chirp_id"], name: "index_chirp_requests_on_chirp_id"
+  end
+
   create_table "chirps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.text "text"
     t.string "attribution"
@@ -32,4 +41,5 @@ ActiveRecord::Schema.define(version: 2020_03_19_195940) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "chirp_requests", "chirps"
 end
