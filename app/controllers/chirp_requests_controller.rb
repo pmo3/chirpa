@@ -14,7 +14,7 @@ class ChirpRequestsController < ApplicationController
       ChirpMailer.with(
         chirp_request: @chirp_request,
         chirp:         @chirp
-      ).chirp_email.deliver_now
+      ).chirp_email.deliver_later
       redirect_to chirps_path
     else
       render :new

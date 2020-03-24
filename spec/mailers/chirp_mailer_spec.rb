@@ -20,7 +20,7 @@ RSpec.describe ChirpMailer, type: :mailer do
   end
 
   it "assigns @chirp" do
-    expect(mail.body.encoded).to match chirp.text.encode
+    expect(mail.body.encoded).to have_content chirp.text
   end
 
   it "attributes the chirp" do
