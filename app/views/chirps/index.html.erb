@@ -16,3 +16,5 @@
     <%= render partial: "chirp_display", locals: { chirp: chirp } %>
   <% end %>
 </div>
+
+<%= will_paginate @chirps, renderer: @will_paginate_renderer %>
