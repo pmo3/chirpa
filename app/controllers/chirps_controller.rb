@@ -5,16 +5,31 @@ class ChirpsController < ApplicationController
 
   def index
     @chirps = if params[:search_term]
-                Chirp.search(params[:search_term]).paginate(page: params[:page])
+                Chirp.approved.search(params[:search_term]).paginate(page: params[:page])
               else
-                Chirp.all.paginate(page: params[:page], per_page: 10)
+                Chirp.approved.paginate(page: params[:page], per_page: 10)
               end
     @will_paginate_renderer = WillPaginateRenderer.new
+  end
+
+  def new
+    @chirp = Chirp.new
+  end
+
+  def create
+    @chirp = Chirp.new(chirp_params)
+    if @chirp.save
+      flash[:notice] = "Thank you! Your submission has been received and sent for approval"
+      ChirpMailer.with(chirp: @chirp).approval_email.deliver_now
+      redirect_to chirps_path
+    else
+      render :new
+    end
   end
 
   private
 
   def chirp_params
-    params.require(:chirp).permit(:search_term)
+    params.require(:chirp).permit(:search_term, :text, :attribution)
   end
 end

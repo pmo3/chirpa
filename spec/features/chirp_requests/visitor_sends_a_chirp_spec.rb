@@ -3,7 +3,7 @@
 require "rails_helper"
 
 feature "Visitor sends a chirp", type: :feature do
-  let!(:chirp) { FactoryBot.create(:chirp) }
+  let!(:chirp) { FactoryBot.create(:chirp, approved: true) }
   let(:request) { FactoryBot.build(:chirp_request, chirp: chirp) }
 
   def fill_in_fields(request)

@@ -3,6 +3,7 @@
     <div class="flex-1 min-w-0">
       <h1 class="text-4xl font-semibold">Browse all chirps</h1>
       <p class="text-l text-indigo-600">Or use the search bar to narrow it down some</p>
+      <p class="text-l text-indigo-600">Can't find the perfect thing to say? <%= link_to "Suggest a new chirp", new_chirp_path, class: "font-bold text-indigo-800" %></p>
     </div>
     <div class="mt-5 flex lg:mt-0 lg:ml-4">
       <%= form_tag chirps_path, method: :get do %>

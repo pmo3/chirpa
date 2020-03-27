@@ -7,4 +7,10 @@ class ChirpMailerPreview < ActionMailer::Preview
       chirp:         ChirpRequest.first.chirp
     ).chirp_email
   end
+
+  def approval_email
+    ChirpApprovalMailer.with(
+      chirp: ChirpRequest.first.chirp
+    ).approval_email
+    end
 end
