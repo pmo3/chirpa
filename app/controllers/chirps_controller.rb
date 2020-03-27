@@ -20,7 +20,7 @@ class ChirpsController < ApplicationController
     @chirp = Chirp.new(chirp_params)
     if @chirp.save
       flash[:notice] = "Thank you! Your submission has been received and sent for approval"
-      ChirpMailer.with(chirp: @chirp).approval_email.deliver_now
+      ChirpMailer.with(chirp: @chirp).approval_email.deliver_later
       redirect_to chirps_path
     else
       render :new

@@ -11,11 +11,14 @@
 
   <body>
     <header>
-      <nav class="flex items-center justify-between px-4 py-3 bg-indigo-800 text-white">
-        <%= link_to "Browse Chirps", chirps_path %>
-        <% if current_admin.present? %>
-          <%= link_to('Logout', destroy_admin_session_path, method: :delete) %>
-        <% end %>
+      <nav class="flex items-center justify-around px-4 py-3 bg-indigo-700 text-white">
+        <div>
+          <%= link_to "Home", root_path, class: "mx-4" %>
+          <%= link_to "Browse Chirps", chirps_path, class: "mx-4" %>
+          <% if current_admin.present? %>
+            <%= link_to 'Logout', destroy_admin_session_path, method: :delete, class: "mx-4" %>
+          <% end %>
+        </div>
       </nav>
     </header>
     <% if flash[:notice].present? || flash[:alert].present? %>
