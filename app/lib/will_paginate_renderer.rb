@@ -28,7 +28,7 @@ class WillPaginateRenderer < WillPaginate::ActionView::LinkRenderer
     if page
       link(text, page, class: classname)
     else
-      tag(:span, text, class: "px-4 py-2 bg-gray-300 border border-transparent text-sm leading-5 font-medium rounded-md text-gray-600 focus:outline-none focus:shadow-outline-indigo focus:border-indigo-700 active:bg-indigo-700 transition duration-150 ease-in-out")
+      tag(:span, text, class: "px-4 py-2 bg-indigo-300 border border-transparent text-sm leading-5 font-medium rounded-md text-indigo-600 focus:outline-none focus:shadow-outline-indigo focus:border-indigo-700 active:bg-indigo-700 transition duration-150 ease-in-out")
     end
   end
 end
