@@ -10,12 +10,12 @@
 chirps = [
   {
     text:        "Hey take those earcuffs off ya fuckin' nerd!",
-    attribution: "Travis Konecny",
+    attribution: "Travis Konecny, Philadelphia Flyers",
     approved:    true
   },
   {
     text:        "You're the fucking best Bellows. You're a fucking superstar",
-    attribution: "Kevin Stevens",
+    attribution: "Kevin Stevens, Pittsburgh Penguins",
     approved:    true
   }, {
     text:        "I'm fifth in the league at faceoffs, look at NHL.com. You're a good player, you're doing well. I'm fifth in the league so I'm probably going to win it right there",
@@ -31,7 +31,7 @@ chirps = [
     approved:    true
   }, {
     text:        "Forget it, cake-eater. If you wanna play, play with yourself",
-    attribution: "Jesse Hall",
+    attribution: "Jesse Hall, Mighty Ducks",
     approved:    true
   }, {
     text:        "One day in the NHL for you. Fantasy camp for you",
@@ -59,14 +59,14 @@ chirps = [
     approved:    true
   }, {
     text:        "Have another donut!",
-    attribution: "Jim Schoenfeld, to referre Don Koharski",
+    attribution: "Jim Schoenfeld, to referee Don Koharski",
     approved:    true
   }, {
     text:        "What are you gonna do about it? Oh you're a good power play scorer now huh? Holy fuck",
     attribution: "Scott Hartnell",
     approved:    true
   }, {
-    text:        "What, did I hit you in the hit? ... I didn't mean to, I thought you were Marchand",
+    text:        "What, did I hit you in the head? ... I didn't mean to, I thought you were Marchand",
     attribution: "PK Subban",
     approved:    true
   }, {

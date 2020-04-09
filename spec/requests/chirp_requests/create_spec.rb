@@ -14,9 +14,21 @@ RSpec.describe "ChirpRequests", type: :request do
         }
       }
     }
-
+    let!(:exclusion) { FactoryBot.create(:exclusion, email_address: "excluded@email.com") }
+    let(:excluded_request) {
+      post chirp_chirp_requests_path(chirp), params: {
+        chirp_request: {
+          recipient: "excluded@email.com",
+          sender:    request.sender
+        }
+      }
+    }
     it "sends an email" do
       expect { subject }.to have_enqueued_job.on_queue("mailers")
+    end
+
+    it "does not send email if recipient is excluded" do
+      expect { excluded_request }.not_to have_enqueued_job.on_queue("mailers")
     end
   end
 end

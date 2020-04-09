@@ -1,0 +1,21 @@
+<div class="flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-md w-full">
+    <div>
+      <h2 class="mt-6 text-center text-3xl leading-9 font-extrabold text-indigo-800">
+        Don't want to receive chirps anymore?
+      </h2>
+      <p class="mt-6 text-l text-gray-600"> We will store your an encrypted version of your email address so that it is not human readable. You won't receive any more emails from us.</p>
+    </div>
+    <%= form_for @exclusion do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+      <div class="rounded-md shadow-sm">
+        <div class="mt-4">
+          <%= f.hidden_field :email_address, value: @email_address %>
+        </div>
+        <div class="mt-6">
+          <%= f.submit "Submit", class: "group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out cursor-pointer" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -14,3 +14,7 @@ AllCops:
 # rspec blocks will be longer
 Metrics/BlockLength:
   ExcludedMethods: ["describe", "context", "scenario", "feature"]
+
+Rails/DynamicFindBy:
+  Whitelist:
+    - find_by_email_address
