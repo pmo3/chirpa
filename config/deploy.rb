@@ -3,7 +3,7 @@
 set :application, "chirpa"
 set :repo_url, "git@github.com:pmo3/chirpa.git"
 
-set :linked_files, fetch(:linked_files, []).push("config/database.yml", "config/master.key")
+set :linked_files, fetch(:linked_files, []).push("config/database.yml", "config/master.key", "config/sidekiq.yml")
 set :linked_dirs, fetch(:linked_dirs, []).push("log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads", "public/packs")
 
 set :rvm_ruby_version, "2.6.3"
