@@ -7,7 +7,9 @@ set :linked_files, fetch(:linked_files, []).push("config/database.yml", "config/
 set :linked_dirs, fetch(:linked_dirs, []).push("log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads")
 
 set :rvm_ruby_version, "2.6.3"
+set :nvm_type, :user
 set :nvm_node, "v12.16.2"
+set :nvm_map_bins, %w[node yarn]
 
 set :deploy_to, "/var/www/chirpa/code"
 
