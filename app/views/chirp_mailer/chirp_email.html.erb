@@ -27,7 +27,7 @@
     </div>
     <div class="flex-1 min-w-0">
       
-     <p class="mt-10 text-l text-indigo-600">To say something back, visit: <%= link_to @url, @url, class: "text-indigo-800 font-bold" %>.</p>
+     <p class="mt-10 text-l text-indigo-600">To say something back, visit: <%= link_to root_url, root_url, class: "text-indigo-800 font-bold" %>.</p>
          <p class="mt-10 text-indigo-600">Don't worry, we don't keep your email address in our database. However, if you would like to prevent our service from sending you anymore emails, we will store an encrypted version of your email address at your request. <%= link_to "Click here", new_exclusion_url(id: @unsubscribe), class: "font-bold text-indigo-800" %> to make this happen</p>
     </div>
   </div>

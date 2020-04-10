@@ -17,7 +17,7 @@ RSpec.describe ChirpMailer, type: :mailer do
     end
 
     it "renders the from email" do
-      expect(mail.from).to eq ["notifications@chirpachirpa.com"]
+      expect(mail.from).to eq ["chirpa.dev@gmail.com"]
     end
 
     it "assigns @chirp" do
@@ -33,7 +33,7 @@ RSpec.describe ChirpMailer, type: :mailer do
     end
 
     it "links to the site" do
-      expect(mail.body.encoded).to match "https://chirpachirpa.com"
+      expect(mail.body.encoded).to match root_url
     end
   end
 

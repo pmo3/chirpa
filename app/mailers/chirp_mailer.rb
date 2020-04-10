@@ -5,7 +5,6 @@ class ChirpMailer < ApplicationMailer
     @chirp_request = params[:chirp_request]
     @chirp = params[:chirp]
     @unsubscribe = params[:unsubscribe]
-    @url = "https://chirpachirpa.com"
     mail(to: @chirp_request.recipient, subject: "A friend has something to say")
   end
 
