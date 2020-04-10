@@ -11,6 +11,6 @@ class ChirpMailer < ApplicationMailer
   def approval_email
     @chirp = params[:chirp]
     @url = "#{Rails.application.routes.default_url_options[:host]}/admin/chirp/#{@chirp.id}"
-    mail(to: ENV["admin_email"], subject: "A chirp is awaiting approval")
+    mail(to: Rails.application.credentials.admin_email, subject: "A chirp is awaiting approval")
   end
 end

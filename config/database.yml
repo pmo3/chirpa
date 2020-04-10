@@ -51,4 +51,4 @@ production:
   <<: *default
   database: chirpa_production
   username: chirpa
-  password: <%= ENV['CHIRPA_DATABASE_PASSWORD'] %>
+  password: <%= Rails.application.credentials.database_password %>
