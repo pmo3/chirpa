@@ -17,11 +17,11 @@ RSpec.describe ChirpMailer, type: :mailer do
     end
 
     it "renders the from email" do
-      expect(mail.from).to eq ["chirpa.dev@gmail.com"]
+      expect(mail.from).to eq ["notifications@chirpa.dev"]
     end
 
     it "assigns @chirp" do
-      # expect(CGI.escapeHTML(mail.body.encoded)).to match CGI.escapeHTML(chirp.text)
+      expect(CGI.escapeHTML(mail.body.encoded)).to match CGI.escapeHTML(chirp.text)
     end
 
     it "attributes the chirp" do
