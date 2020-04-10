@@ -7,8 +7,9 @@ set :linked_files, fetch(:linked_files, []).push("config/database.yml", "config/
 set :linked_dirs, fetch(:linked_dirs, []).push("log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads")
 
 set :rvm_ruby_version, "2.6.3"
+set :nvm_node, "v12.16.2"
 
-set :deploy_to "/var/www/chirpa/code"
+set :deploy_to, "/var/www/chirpa/code"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -54,7 +55,7 @@ before :deploy, :run_tests do
 end
 
 before "deploy:assets:precompile", "deploy:yarn_install"
-after 'deploy:updated', 'webpacker:precompile'
+after "deploy:updated", "webpacker:precompile"
 
 namespace :deploy do
   task :confirmation do
