@@ -60,6 +60,7 @@ group :development do
   gem "capistrano-passenger", ">= 0.1.1"
   gem "capistrano-rails"
   gem "capistrano-rbenv", "~> 2.1"
+  gem "capistrano-rbenv-install", "~> 1.2.0"
   gem "capistrano-webpacker-precompile", require: false
   gem "capistrano-nvm", require: false
 end

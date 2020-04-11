@@ -12,7 +12,7 @@ set :nvm_map_bins, %w[node yarn]
 
 set :rbenv_type, :user
 set :rbenv_ruby, "2.6.3"
-
+set :rbenv_path, "/home/chirpa/.rbenv"
 set :deploy_to, "/var/www/chirpa/code"
 
 # Default branch is :master
